@@ -11,7 +11,7 @@
 <body>
   <div id="app" style="padding:1rem;">
     <label for="totalSlide" class="form-label">
-      総スライド数
+      総スライド数 (100以内)
     </label>
     <input v-model="totalSlideNum" type="number" class="form-control w-10" id="totalSlide">
     <div class="row g-2">
@@ -45,8 +45,8 @@
       </div>
     </div>
     <button @click="appendBar">反映</button>
-    <div id="chart--wrapper" style="padding:2rem;">
-      <svg id="box_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+    <div id="chart--wrapper" style="max-height:60vw;padding:2rem;overflow-y:scroll;">
+      <svg id="box_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 4000">
         <!--後からJSで描画-->
       </svg>
     </div>

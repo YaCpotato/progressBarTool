@@ -29,6 +29,7 @@ var app = new Vue({
             backBar.setAttribute("y", this.bar.y + (i * (this.bar.height + 10)) + 10);
             backBar.setAttribute("stroke", this.bar.strokeColor);
             backBar.setAttribute("stroke-width", this.bar.strokeWidth);
+            backBar.setAttribute("rx", this.bar.rx);
             backBar.setAttribute("ry", this.bar.ry);
             backBar.setAttribute("width", this.bar.width);
             backBar.setAttribute("height", this.bar.height);
@@ -42,6 +43,7 @@ var app = new Vue({
             progress.setAttribute("y", this.bar.y + (i * (this.bar.height + 10)) + 10);
             progress.setAttribute("stroke", this.bar.strokeColor);
             progress.setAttribute("stroke-width", this.bar.strokeWidth);
+            progress.setAttribute("rx", this.bar.rx);
             progress.setAttribute("ry", this.bar.ry);
             progress.setAttribute("width", (this.bar.width / this.totalSlideNum) * (i + 1));
             progress.setAttribute("height", this.bar.height);
