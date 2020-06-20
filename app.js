@@ -21,6 +21,7 @@ var app = new Vue({
       appendBar() {
         $("rect").remove();
         var svg_elem = document.getElementById("box_1");
+        d3Element = d3.select("#box_1")
 
         var backBar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
         backBar.setAttribute("x", this.bar.x);
@@ -35,6 +36,7 @@ var app = new Vue({
         svg_elem.appendChild(backBar);
 
         var progress = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        progress.setAttribute("id", "progressBar");
         progress.setAttribute("x", this.bar.x);
         progress.setAttribute("y", this.bar.y);
         progress.setAttribute("stroke", this.bar.strokeColor);
@@ -45,11 +47,17 @@ var app = new Vue({
         progress.setAttribute("fill", this.bar.lineColor);
         svg_elem.appendChild(progress);
 
-        var text = document.createElementNS("http://www.w3.org/2000/svg", "text")
-        text.setAttribute("x", this.bar.x);
-        text.setAttribute("y", this.bar.y);
-        text.setAttribute("text","20")
-        svg_elem.appendChild(text)
+        // var text = document.createElementNS("http://www.w3.org/2000/svg", "text")
+        // text.setAttribute("x", this.bar.x);
+        // text.setAttribute("y", this.bar.y);
+        // text.textContent("20")
+        // text.setAttribute("fill",this.bar.strokeColor)
+        d3Element.append("text")
+        .attr("x", ($("#progressBar").width() / 2) + 10)
+        .attr("y", ($("#progressBar").height() / 2) + 15)
+        .text("20")
+        .attr("fill",this.bar.strokeColor)
+        .style("text-anchor", "middle")
       }
     },
     mounted() {
