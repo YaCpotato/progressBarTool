@@ -21,16 +21,35 @@ var app = new Vue({
       appendBar() {
         $("rect").remove();
         var svg_elem = document.getElementById("box_1");
-        var svg = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        svg.setAttribute("x", this.bar.x);
-        svg.setAttribute("y", this.bar.y);
-        svg.setAttribute("stroke", this.bar.strokeColor);
-        svg.setAttribute("stroke-width", this.bar.strokeWidth);
-        svg.setAttribute("ry", this.bar.ry);
-        svg.setAttribute("width", this.bar.width);
-        svg.setAttribute("height", this.bar.height);
-        svg.setAttribute("fill", this.bar.lineColor);
-        svg_elem.appendChild(svg);
+
+        var backBar = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        backBar.setAttribute("x", this.bar.x);
+        backBar.setAttribute("y", this.bar.y);
+        backBar.setAttribute("stroke", this.bar.strokeColor);
+        backBar.setAttribute("stroke-width", this.bar.strokeWidth);
+        backBar.setAttribute("ry", this.bar.ry);
+        backBar.setAttribute("width", 500);
+        backBar.setAttribute("height", this.bar.height);
+        backBar.setAttribute("fill", this.bar.lineColor);
+        backBar.setAttribute("style","stroke-opacity: .3;fill-opacity: .3")
+        svg_elem.appendChild(backBar);
+
+        var progress = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        progress.setAttribute("x", this.bar.x);
+        progress.setAttribute("y", this.bar.y);
+        progress.setAttribute("stroke", this.bar.strokeColor);
+        progress.setAttribute("stroke-width", this.bar.strokeWidth);
+        progress.setAttribute("ry", this.bar.ry);
+        progress.setAttribute("width", this.bar.width);
+        progress.setAttribute("height", this.bar.height);
+        progress.setAttribute("fill", this.bar.lineColor);
+        svg_elem.appendChild(progress);
+
+        var text = document.createElementNS("http://www.w3.org/2000/svg", "text")
+        text.setAttribute("x", this.bar.x);
+        text.setAttribute("y", this.bar.y);
+        text.setAttribute("text","20")
+        svg_elem.appendChild(text)
       }
     },
     mounted() {
