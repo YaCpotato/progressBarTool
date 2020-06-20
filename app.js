@@ -47,11 +47,6 @@ var app = new Vue({
         progress.setAttribute("fill", this.bar.lineColor);
         svg_elem.appendChild(progress);
 
-        // var text = document.createElementNS("http://www.w3.org/2000/svg", "text")
-        // text.setAttribute("x", this.bar.x);
-        // text.setAttribute("y", this.bar.y);
-        // text.textContent("20")
-        // text.setAttribute("fill",this.bar.strokeColor)
         d3Element.append("text")
         .attr("x", ($("#progressBar").width() / 2) + 10)
         .attr("y", ($("#progressBar").height() / 2) + 15)
