@@ -33,22 +33,24 @@
             </div>
         </div>
     </div>
-    <div class="row g-3">
-      <div class="col">
-        <label for="lineColor" class="form-label">Line color</label>
-        <input v-model="bar.lineColor" type="color" class="form-control form-control-color" id="lineColor" value="#563d7c" title="Choose line color">
-      </div>
-      <div class="col">
-        <label for="lineColor" class="form-label">Stroke color</label>
-        <input v-model="bar.strokeColor" type="color" class="form-control form-control-color" id="lineColor" value="#563d7c" title="Choose line color">
-      </div>
-      <div class="col">
-        <label for="barRx" class="form-label">
-          枠線の太さ Strole Width
-        </label>
-        <p>{{ bar.strokeWidth }}</p>
-        <input v-model="bar.strokeWidth" type="range" class="form-range" min="0" max="10" step="1" id="barRx">
-      </div>
+    <div class="form-group">
+        <div class="row g-3">
+            <div class="col">
+                <label for="lineColor" class="form-label">Line color</label>
+                <input v-model="bar.lineColor" type="color" class="form-control form-control-color" id="lineColor" value="#563d7c" title="Choose line color">
+            </div>
+            <div class="col">
+                <label for="lineColor" class="form-label">Stroke color</label>
+                <input v-model="bar.strokeColor" type="color" class="form-control form-control-color" id="lineColor" value="#563d7c" title="Choose line color">
+            </div>
+            <div class="col">
+                <label for="barRx" class="form-label">
+                枠線の太さ Strole Width
+                </label>
+                <p>{{ bar.strokeWidth }}</p>
+                <input v-model="bar.strokeWidth" type="range" class="form-range" min="0" max="10" step="1" id="barRx">
+            </div>
+        </div>
     </div>
     <button @click="appendBar">反映</button>
     <div id="chart--wrapper" style="max-height:60vw;padding:2rem;overflow-y:scroll;">
