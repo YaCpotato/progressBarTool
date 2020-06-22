@@ -4,11 +4,11 @@ var app = new Vue({
       return {
         stg: "hello",
         svg: null,
-        totalSlideNum:0,
+        totalSlideNum:1,
         bar: {
           x: 10,
           y: 10,
-          rx: 20,
+          rx: 10,
           ry: 10,
           width: 500,
           height: 25,
