@@ -19,13 +19,15 @@
         <label for="barRx" class="form-label">
           丸み① (rx)
         </label>
-        <input v-model="bar.rx" type="number" class="form-control w-10" id="barRx">
+        <p>{{ bar.rx }}</p>
+        <input v-model="bar.rx" type="range" class="form-range" min="0" max="15" step="1" id="barRx">
       </div>
       <div class="col-auto">
         <label for="barRy" class="form-label">
           丸み② (ry)
         </label>
-        <input v-model="bar.ry" type="number" class="form-control w-10" id="barRy">
+        <p>{{ bar.ry }}</p>
+        <input v-model="bar.ry" type="range" class="form-range" min="0" max="15" step="1" class="form-control w-10" id="barRy">
       </div>
     </div>
     <div class="row g-3">
@@ -41,7 +43,8 @@
         <label for="barRx" class="form-label">
           枠線の太さ Strole Width
         </label>
-        <input v-model="bar.strokeWidth" type="number" class="form-control w-10" id="barRx">
+        <p>{{ bar.strokeWidth }}</p>
+        <input v-model="bar.strokeWidth" type="range" class="form-range" min="0" max="10" step="1" id="barRx">
       </div>
     </div>
     <button @click="appendBar">反映</button>

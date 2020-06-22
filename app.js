@@ -14,7 +14,7 @@ var app = new Vue({
           height: 25,
           lineColor:"#000000",
           strokeColor:"#00FF00",
-          strokeWidth:5
+          strokeWidth:3
         }
       };
     },
