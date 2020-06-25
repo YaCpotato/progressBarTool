@@ -31,6 +31,12 @@
                 <p>{{ bar.ry }}</p>
                 <input v-model="bar.ry" type="range" class="form-range" min="0" max="15" step="1" id="barRy">
             </div>
+            <div style="max-height:100px;overflow-y: hidden;">
+                <p>イメージ⇩</p>
+                <svg id="box_sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 4000">
+                    <rect id="progressBar-2" x="10" y="10" :stroke="bar.strokeColor" :stroke-width="bar.strokeWidth" :rx="bar.rx" :ry="bar.ry" width="100" height="25" :fill="bar.lineColor"></rect>
+                </svg>
+            </div>
         </div>
     </div>
     <div class="form-group">
