@@ -1,3 +1,9 @@
+$(document).ready(function() {
+    $(".trigger").click(function() {
+      $(".menu").toggleClass("active"); 
+    });
+  });
+
 var app = new Vue({
     el: "#app",
     data() {
