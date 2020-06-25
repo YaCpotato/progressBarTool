@@ -22,15 +22,15 @@ body {
 }
 .menu {
   @extend .absolute-center;
-  width: 20em;
-  height: 20em;
+  width: 15em;
+  height: 15em;
 
   .btn {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     border-radius: 50%;
     background: rgba(255,255,255, 0.15);
     opacity: 0;
@@ -106,8 +106,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     transform-origin: 50% 50%;
   }
 
@@ -137,7 +137,7 @@ body {
   }
 }
 
-$numOfElems: 8;
+$numOfElems: 6;
 
 @for $i from 1 through $numOfElems {
   $deg: 360deg / $numOfElems;

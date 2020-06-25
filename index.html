@@ -10,63 +10,13 @@
 </head>
 <body>
   <div id="app" style="padding:1rem;">
-    <div class="form-group">
-        <label for="totalSlide" class="form-label">
-            総スライド数 (100以内)
-        </label>
-        <input v-model="totalSlideNum" type="number" max="100" min="1" class="form-control w-10" id="totalSlide">      
-    </div>
-    <div class="form-group">
-        <div class="row g-2">
-            <div class="col-auto">
-                <label for="barRx" class="form-label">
-                丸み① (rx)
-                </label>
-                <p>{{ bar.rx }}</p>
-                <input v-model="bar.rx" type="range" class="form-range" min="0" max="15" step="1" id="barRx">
-            </div>
-            <div class="col-auto">
-                <label for="barRy" class="form-label">
-                丸み② (ry)
-                </label>
-                <p>{{ bar.ry }}</p>
-                <input v-model="bar.ry" type="range" class="form-range" min="0" max="15" step="1" id="barRy">
-            </div>
-            <div style="max-height:100px;overflow-y: hidden;">
-                <p>イメージ⇩</p>
-                <svg id="box_sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 4000">
-                    <rect id="progressBar-2" x="10" y="10" :stroke="bar.strokeColor" :stroke-width="bar.strokeWidth" :rx="bar.rx" :ry="bar.ry" width="100" height="25" :fill="bar.lineColor"></rect>
-                </svg>
-            </div>
+        <div style="max-height:100px;overflow-y: hidden;">
+            <p>イメージ⇩</p>
+            <svg id="box_sample" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 4000">
+                <rect id="progressBar-2" x="10" y="10" :stroke="bar.strokeColor" :stroke-width="bar.strokeWidth" :rx="bar.rx" :ry="bar.ry" width="100" height="25" :fill="bar.lineColor"></rect>
+            </svg>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="row g-3">
-            <div class="col">
-                <label for="lineColor" class="form-label">Line color</label>
-                <input v-model="bar.lineColor" type="color" class="form-control form-control-color" id="lineColor" value="#563d7c" title="Choose line color">
-            </div>
-            <div class="col">
-                <label for="lineColor" class="form-label">Stroke color</label>
-                <input v-model="bar.strokeColor" type="color" class="form-control form-control-color" id="lineColor" value="#563d7c" title="Choose line color">
-            </div>
-            <div class="col">
-                <label for="barRx" class="form-label">
-                枠線の太さ Stroke Width
-                </label>
-                <p>{{ bar.strokeWidth }}</p>
-                <input v-model="bar.strokeWidth" type="range" class="form-range" min="0" max="10" step="1" id="barRx">
-            </div>
-        </div>
-    </div>
     <button @click="appendBar">反映</button>
-    <div id="chart--wrapper" style="max-height:60vw;padding:2rem;overflow-y:scroll;">
-      <svg id="box_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 4000">
-        <!--後からJSで描画-->
-      </svg>
-    </div>
-  </div>
-  <script src="./app.js"></script>
   <div class="menu">
     <div class="btn trigger">
       <span class="main-title">Make Your Own Progress Bar!</span>
@@ -74,46 +24,72 @@
     <div class="icons">
       <div class="rotater">
         <div class="btn btn-icon">
-          <i class="fa fa-codepen"></i>
+            <div class="form-group">
+                <label for="totalSlide" class="form-label">
+                    総スライド数 (100以内)
+                </label>
+                <input v-model="totalSlideNum" type="number" max="100" min="1" class="form-control w-10" id="totalSlide">      
+            </div>
         </div>
       </div>
       <div class="rotater">
         <div class="btn btn-icon">
-          <i class="fa fa-facebook"></i>
+            <div class="form-group">
+                <label for="barRx" class="form-label">
+                丸み① (rx)
+                </label>
+                <p>{{ bar.rx }}</p>
+                <input v-model="bar.rx" type="range" class="form-range" min="0" max="15" step="1" id="barRx">
+            </div>
         </div>
       </div>
       <div class="rotater">
         <div class="btn btn-icon">
-          <i class="fa fa-google-plus"></i>
+            <div class="form-group">
+                <label for="barRy" class="form-label">
+                丸み② (ry)
+                </label>
+                <p>{{ bar.ry }}</p>
+                <input v-model="bar.ry" type="range" class="form-range" min="0" max="15" step="1" id="barRy">
+            </div>
         </div>
       </div>
       <div class="rotater">
         <div class="btn btn-icon">
-          <i class="fa fa-twitter"></i>
+            <div class="form-group">
+                <label for="lineColor" class="form-label">Line color</label>
+                <input v-model="bar.lineColor" type="color" class="form-control form-control-color" id="lineColor" title="Choose line color">
+            </div>
         </div>
       </div>
       <div class="rotater">
         <div class="btn btn-icon">
-          <i class="fa fa-dribbble"></i>
+            <div class="form-group">
+                <label for="strokeColor" class="form-label">Stroke color</label>
+                <input v-model="bar.strokeColor" type="color" class="form-control form-control-color" id="strokeColor" title="Choose stroke color">
+            </div>
         </div>
       </div>
       <div class="rotater">
         <div class="btn btn-icon">
-          <i class="fa fa-linkedin"></i>
-        </div>
-      </div>
-      <div class="rotater">
-        <div class="btn btn-icon">
-          <i class="fa fa-github"></i>
-        </div>
-      </div>
-      <div class="rotater">
-        <div class="btn btn-icon">
-          <i class="fa fa-behance"></i>
+            <div class="form-group">
+                <label for="barRx" class="form-label">
+                枠線の太さ Stroke Width
+                </label>
+                <p>{{ bar.strokeWidth }}</p>
+                <input v-model="bar.strokeWidth" type="range" class="form-range" min="0" max="10" step="1" id="barRx">
+            </div>
         </div>
       </div>
     </div>
   </div>
+  <div id="chart--wrapper" style="max-height:60vw;padding:2rem;overflow-y:scroll;">
+    <svg id="box_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 4000">
+      <!--後からJSで描画-->
+    </svg>
+  </div>
+</div>
+  <script src="./app.js"></script>
 </body>
 
 </html>
